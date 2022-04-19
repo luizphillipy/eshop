@@ -1,2 +1,4 @@
-package edu.miu.cs.cs425.eshop.model;public enum OrderStatus {
+package edu.miu.cs.cs425.eshop.model;
+
+public enum OrderStatus {
 }
