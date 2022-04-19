@@ -1,7 +1,10 @@
 package edu.miu.cs.cs425.eshop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -15,7 +18,14 @@ public class User  implements Serializable {
     private String email;
     private String phone;
     private String password;
-    // private List<Order> orders;
+    @OneToMany(mappedBy = "client")
+    @JsonIgnore
+    private List<Order> orders = new ArrayList<>();
+
+    public List<Order> getOrders() { //for a list, we only implement getter.
+        return orders;
+    }
+
 
     public User() {
     }
