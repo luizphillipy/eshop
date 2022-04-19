@@ -1,15 +1,15 @@
 package edu.miu.cs.cs425.eshop.model;
 
-//import javax.persistence.*;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-//@Entity
-//@Table(name = "users")
+@Entity
+@Table(name = "users")
 public class User  implements Serializable {
-  //  @Id
-  //  @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     private String name;
     private String email;
