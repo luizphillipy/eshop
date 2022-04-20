@@ -2,9 +2,7 @@ package edu.miu.cs.cs425.eshop.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "categories")
@@ -13,8 +11,12 @@ public class Category implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long categoryId;
     private String name;
+    @Transient
+   private Set<Product> products = new HashSet<>();
 
-   // private List<Product> products = new ArrayList<>();
+    public Set<Product> getProducts() {
+        return products;
+    }
 
     public Category() {
     }
